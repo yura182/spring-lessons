@@ -4,10 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringLessonsApplication {
+public class TimeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringLessonsApplication.class, args);
+		SpringApplication.run(TimeApplication.class, args);
 	}
-
 }
