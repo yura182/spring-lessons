@@ -14,7 +14,7 @@ public class ProjectRepositoryImpl implements ProjectRepository {
 
     @Override
     public Optional<Project> findById(Long id) {
-        return projects.stream().filter(p-> p.getId() == id).findFirst();
+        return projects.stream().filter(p-> p.getId().equals(id)).findFirst();
     }
 
     @Override
@@ -23,11 +23,14 @@ public class ProjectRepositoryImpl implements ProjectRepository {
 
         if (Objects.isNull(existingProject)) {
             projects.add(project);
+            return project;
         } else {
             Project newProject = new Project(project);
 
             projects.remove(existingProject);
             projects.add(project);
+
+            return newProject;
         }
     }
 }
